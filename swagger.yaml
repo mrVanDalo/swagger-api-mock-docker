@@ -1,0 +1,111 @@
+swagger: '2.0'
+info:
+  title: Swagger Api Mock Example
+  description: A swagger mock api example
+  version: "1.0-SNAPSHOT"
+  contact:
+    name: Ingolf Wagner
+    url: https://hub.docker.com/r/palo/swagger-api-mock/
+    email: docker@ingolf-wagner.de
+host: https://hub.docker.com/r/palo/swagger-api-mock/
+schemes:
+  - http
+  - https
+produces:
+  - application/json
+consumes:
+  - application/json
+paths:
+  /:
+    get:
+      summary: description
+      responses:
+        200:
+          description: The health status is shown
+          schema:
+            $ref: "#/definitions/RootResponse"
+          examples:
+            status: ok
+        default:
+          description: An error occured.
+
+definitions:
+
+  RootResponse:
+    type: object
+    properties:
+      welcome:
+        type: string
+        x-chance-type: fixed
+        x-type-value:
+          "This is an example page rendered by Swagger the predefined swagger"
+      abouts:
+        type: object
+        properties:
+          swagger-api-mock:
+            type: string
+            x-chance-type: fixed
+            x-type-value:
+              "https://www.npmjs.com/package/swagger-mock-api"
+          swagger-api-mock-docker:
+            type: string
+            x-chance-type: fixed
+            x-type-value:
+              "https://hub.docker.com/r/palo/swagger-api-mock"
+          chance:
+            type: string
+            x-chance-type: fixed
+            x-type-value:
+              "http://chancejs.com"
+          swagger-spec:
+            type: string
+            x-chance-type: fixed
+            x-type-value:
+              "https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md"
+      api:
+        type: object
+        properties:
+          email:
+            type: string
+            format: email
+            x-chance-type: email
+          items:
+            type: array
+            items:
+              $ref: '#/definitions/Items'
+
+  Items:
+    type: object
+    properties:
+      id:
+        type: integer
+        x-type-options:
+          min: 0
+          max: 1000000000
+      timestamp:
+        type: string
+        format: date-time
+        x-chance-type: date
+      other-timestamp:
+        type: integer
+        x-chance-type: timestamp
+      name:
+        type: string
+        x-chance-type: name
+      currency:
+        type: string
+        x-chance-type: currency
+      price:
+        type: integer
+        x-type-options:
+          min: 0
+          max: 1000000
+      avatar:
+        type: string
+        x-chance-type: avatar
+        x-type-options:
+          protocol: http
+      homepage:
+        type: string
+        x-chance-type: url
+
