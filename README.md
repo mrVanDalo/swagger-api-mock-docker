@@ -27,4 +27,4 @@ It has to be named `swagger.yaml`.
 * [swagger-api-mock](https://www.npmjs.com/package/swagger-mock-api)
 * [swagger-api-mock-docker](https://hub.docker.com/r/palo/swagger-api-mock)
 * [chance](http://chancejs.com)
-* [swagger-spec](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md")
+* [swagger-spec](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md)
