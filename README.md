@@ -1,6 +1,9 @@
-# swagger API mock container
+# swagger api mock server
 
-A container to run a mock server loading (and watching) a `swagger.yaml` file.
+Runs an api mock server, by parsing a swagger.yaml file.
+You can edit the swagger.yaml, reload the browser and everything should
+be up-to-date.
+
 
 # how to run
 
